@@ -1,0 +1,397 @@
+/*------- Reset --------*/
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body{
+    font: 1.6rem 'Raleway',sans-serif;
+    margin: 0;
+    background-color: #fff;
+    line-height: 1.6;
+    text-rendering:optimizeLegibility;
+}
+h1,h2,h3,h4,p,ul,ol, figure{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: 200;
+}
+*{
+    box-sizing: border-box;
+}
+img{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+}
+a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+button, input[type="submit"]{
+    padding: 0;
+    background-color: transparent;
+    font-size: inherit;
+    border: 0;
+}
+input,textarea{
+    border: 0;
+
+}
+
+/*------- Style --------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root{
+    --color-header-bg: #34495e;
+    --color-bg : #2c3e50;
+    --color-shadow : #000000;
+    --color-fg: #fafafa;
+    --color-bg-input: #fafafa;
+    --color-fg-dark:  #000000;
+    --color-bg-text:#ecf0f1;
+    --color-bg-a: #3498db;
+    --color-bg-input-submit: #27ae60;
+    --color-bg-bookmark: #2980b9;
+}
+
+body{
+    background-color: var(--color-bg);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    background-color: var(--color-header-bg);
+    box-shadow: 0 0 .5rem var(--color-shadow);
+}
+
+header img {
+    margin-right: 5rem;
+    width: 10rem;
+}
+
+header h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: var(--color-fg);
+}
+
+main{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+main section h2{
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--color-fg);
+}
+
+main section p{
+    max-width: 70rem;
+    text-align: center;
+    margin: 0 auto;
+    background-color: var(--color-bg-text);
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem var(--color-shadow);
+    font-weight: 500;  
+}
+
+.list_image{
+    max-width: calc(5rem + 5*20rem);
+    margin: 4rem auto;
+}
+
+.list_image ul{
+    font-size: 0;
+    text-align: center;
+}
+
+.list_image ul li{
+    display: inline-block;
+    margin: .5rem;
+}
+
+.list_image ul li img{
+    display: block;
+    width: 20rem;
+    height: 29.5rem;
+}
+
+
+main aside{
+    display: block;
+    margin: 3rem auto;
+    max-width: 35rem;
+}
+
+main aside #inscription, main aside #connexion{
+    text-align: center;
+    display: block;
+    color: var(--color-fg);
+}
+
+main aside #connexion{
+    text-decoration: underline;
+    margin-top: 1rem;
+}
+
+main aside #inscription{
+    display: block;
+    background-color: var(--color-bg-a);
+    color: var(--color-fg-dark);
+    padding: 1rem 0;
+    border-radius: 1rem;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+footer{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+footer p{
+    color: var(--color-fg);
+    font-size: 1.4rem;
+}
+
+/*------- Formulaire --------*/
+
+.form h2{
+    text-align: center;
+    font-weight: 600;
+    color: var(--color-bg-text);
+}
+
+.form form{
+    max-width: 80rem;
+    margin: 0 auto;
+
+}
+
+.form form input, .form form label{
+    display: block;
+
+    
+}
+
+.form form label{
+    margin-top: 2rem;
+    color: var(--color-bg-text);
+    font-weight: 500;
+
+}
+
+.form form input{
+    padding: 1rem;
+    border-radius: .5rem;
+    width: 100%;
+    font-size: 1.6rem;
+
+}
+
+.form form input:last-child{
+    margin: 5rem auto;
+    background-color: var(--color-bg-input-submit);
+    cursor: pointer;
+    font-weight: 600;
+    max-width: 40rem;
+    text-transform: uppercase;
+}
+
+input:focus { 
+    outline: none;
+}
+
+/*------- ListeFilm --------*/
+#search_form{
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#search_form > form{
+    background-color: var(--color-bg-input);
+    max-width: 40rem;
+    display: inline-flex;
+    border-radius: 2rem;
+    padding: .5rem .7rem .5rem 1rem;
+}
+
+#search_form > form > #search{
+    font-size: 1.8rem;
+    max-width: 30rem;
+    background-color: var(--color-bg-input);
+}
+
+#search_form > form > #submit{
+    background: url("../search.svg") no-repeat;
+    background-size: 3rem;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+.bookmark::before{
+    content: url("../fav.svg");
+    display: inline-block;
+    width: 3rem;
+    vertical-align: -.9rem;
+    filter: invert();
+    margin-right: .3rem;
+}
+
+.bookmark{
+    color: var(--color-bg-text);
+    background-color: var(--color-bg-bookmark);
+    padding: 1rem 2rem 0.3rem 2rem;
+    border-radius: 0.5rem;
+}
+
+.bookmark_absolute{
+    position: absolute;
+    right: 5rem;
+}
+
+/*------- Film --------*/
+
+.one_film{
+    background-color: #bdc3c7;
+    display: block;
+    margin-top: 5rem;
+    padding: 2rem 0;
+}
+
+.one_film > ul > li > img{
+    width: 30rem;
+    display: block;
+}
+
+.one_film > ul > li > button{
+    margin: 1rem 0;
+    cursor: pointer;
+    width: 90%;
+}
+
+main .one_film ul li h2{
+    font-size: 3.2rem;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    color: var(--color-fg-dark);
+}
+
+main .one_film ul li h3{
+    text-align: left;
+    font-size: 2.5rem;
+}
+
+main .one_film p{
+    background-color: initial;
+    box-shadow: none;
+    padding: 0;
+    text-align: left;
+}
+
+
+main > .one_film > ul > li > div > div > ul > li  > img{
+    width: 5rem;
+    display: block;
+    border-radius: 1rem;
+}
+
+main .one_film ul li{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+main .one_film > ul > li:first-child{
+    margin-right: 5rem;
+}
+
+
+.table {
+    display: grid;
+    grid-template-columns: 10rem auto ;
+    max-width: 40rem;
+    text-align: left;
+}
+
+.table > div{
+    margin-top: 1rem; 
+}
+
+.\.list_streaming {
+    grid-column: 1/3;
+}
+
+.list_image_horizontal{
+    text-align: center;
+    font-size: 0;
+}
+
+.list_image_horizontal li{
+    width: 20rem;
+    height: 29.5rem;
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+.list_image_horizontal li img{
+    border-radius: .7rem;
+}
+
+.list_image_horizontal h4{
+    margin: 2rem 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--color-fg);
+}
+
+/*------- Bookmark --------*/
+
+.list_animation li a img{
+    transition-duration: .2s;
+}
+
+.list_animation li a:hover img{
+    transform: scale(1.05);
+    transition-duration: .2s;
+}
+
+/*------- Footer --------*/
+
+footer{
+    margin: 5rem 0 2rem 0;
+}
+
+@media screen and (max-width: 700px){
+    /*------- Film --------*/
+    main .one_film > ul > li:first-child{
+        margin-right: 0;
+    }
+
+    header{
+        text-align: center;
+    }
+    
+    header img {
+        margin-right: 1rem;
+        width: 6rem;
+    }
+
+    body > header > h1{
+        font-size: 2.3rem;
+       }       
+
+}
