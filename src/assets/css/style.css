@@ -58,7 +58,8 @@ input,textarea{
     --color-bg-a: #3498db;
     --color-bg-input-submit: #27ae60;
     --color-bg-bookmark: #2980b9;
-}
+    --color-fg-warning: #e67e22;
+}   
 
 body{
     background-color: var(--color-bg);
@@ -168,9 +169,17 @@ footer p{
 
 /*------- Formulaire --------*/
 
+.form_warning{
+    text-align: center;
+    color: var(--color-fg-warning);
+    font-size: 2rem;
+    font-style: italic;
+}
+
 .form h2{
     text-align: center;
     font-weight: 600;
+    font-size: 3.7rem;
     color: var(--color-bg-text);
 }
 

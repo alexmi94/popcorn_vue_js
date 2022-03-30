@@ -16,26 +16,28 @@ export default {
 
     actions: {
         // CRUD: read one
-/*
-        GetMovie(context, data){
-            fetch( `http://localhost:6829/api/${data.path}/${data.id}`, {
-                method: `GET`,
+
+        Createuser(context, data){
+            fetch( `http://localhost:6829/api/user`, {
+                method: 'POST',
+                body: JSON.stringify(data.content),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             })
             .then( response => response.json(response)) // Parse response
             .then( async apiResponse => {
-                // Commit new state
-                if( data.path === 'detail' ){
-                    context.commit('SINGLEUSER', { data: apiResponse })
-                }
-                else if( data.path === 'recommendations' ){
-                    context.commit('SINGLEALBUM', { data: apiResponse })
-                }
+                // Call action methond within action method
+                console.log('updateFlashNote', 'CRUD create one: SUCCESS', apiResponse)
+
             })
             .catch( apiError => {
-                console.log('updateFlashNote', 'CRUD read one: ERROR', apiError)
+                console.log('updateFlashNote', 'CRUD create one: ERROR', apiError)
+
             })
+
         },
-*/
+
         PopularMovie(context, data){
             fetch( `http://localhost:6829/api/movie/popular/${data.nb}`, {
                 method: 'GET',
