@@ -1,27 +1,26 @@
 <template>
 	<div 
-		class="home-view-component"
+		class="connexion-view-component"
 	>
-		<section>
-			<h2>Prêt à regarder? Remplissez le formulaire proposé dans cette page </h2>
-			<p>Tous les mois profitez de toutes les nouveautés série et cinéma. A partir du mois
-				prochain on vous propose tous les classiques du cinéma. Où que vous soyez. Tous
-				le s films en VO, VOST, VF et plus d'options
-			</p>
-		</section>
+	<section class="list_image">
+	<ul>				
+		<li v-for="item in moviepopular" :key="item.poster_path">
+			<img :src="'https://image.tmdb.org/t/p/w600_and_h900_bestv2/'+item.poster_path" :alt=item.original_title>
+		</li>
+	</ul>
+	</section>
 
-		<section class="list_image">
-		<ul>				
-			<li v-for="item in moviepopular" :key="item.poster_path">
-				<img :src="'https://image.tmdb.org/t/p/w600_and_h900_bestv2/'+item.poster_path" :alt=item.title>
-			</li>
-		</ul>
-		</section>
+    <section class="form">
+        <h2>Connexion</h2>
+        <form action="" @submit.prevent="checkform" method="post">
+            <label for="email">E-mail</label>
+            <input type="text" id="email" placeholder="E-mail" aria-required="true" name="email" v-model="email">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" placeholder="Mot de passe" aria-required="true" name="password" v-model="password">
 
-		<aside>
-			<router-link id="inscription" to="/formulaire">Inscription</router-link>
-			<router-link id="connexion" to="/connexion">Déjà inscrit ? Connectez vous</router-link>
-		</aside>
+            <input type="submit" value="Connexion">
+        </form>
+    </section>
 	</div>
 </template>
 
@@ -33,7 +32,7 @@
 	*/
 		export default {
 			// [VUE] Component name
-			name: 'HomeView',
+			name: 'ConnexionView',
 
 			/*
 				[VUE] Components => https://bit.ly/3GdqmXg
@@ -49,7 +48,10 @@
 			*/
 				data(){
 					return{
-						moviepopular: this.$store.getters.moviepopular
+						moviepopular: this.$store.getters.moviepopular,
+						errors: [],
+						email: null,
+						password: null,
 					}
 				},
 			//
@@ -59,8 +61,16 @@
 				Used to add methods in Vue.js component
 			*/
 				methods:{
+				checkform: function(){
+					var data = {
+						"email": this.email,
+						"password" : this.password
+					}
+					this.$store.dispatch('Login', {content: data});
+					
+				},
 				fetchData: function(){
-					this.$store.dispatch('PopularMovie', {nb: 10});
+					this.$store.dispatch('PopularMovie', {nb: 5});
 					}
 				},
 			//

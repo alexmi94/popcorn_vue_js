@@ -20,6 +20,11 @@ const routerPath = [
         path: '/formulaire',
         name: 'FormulaireView',
         component: () => import('../views/FormulaireView.vue'),
+    },
+    {
+        path: '/connexion',
+        name: 'ConnexionView',
+        component: () => import('../views/ConnexionView.vue'),
     }
 ];
 //
