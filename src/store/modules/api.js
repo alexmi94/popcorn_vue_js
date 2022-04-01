@@ -26,7 +26,8 @@ export default {
                 body: JSON.stringify(data.content),
                 headers: {
                     'Content-Type': 'application/json'
-                }
+                },
+                credentials: `include`
             })
             .then( response => response.json()) // Parse response
             .then( apiResponse => {
