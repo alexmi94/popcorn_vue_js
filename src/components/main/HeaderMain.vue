@@ -2,7 +2,7 @@
 	<header
 		class="header-main-component"
 	>
-	<img :src="logo">
+	<img :src="logo" alt="popcorn">
     <h1>Films, séries TV et bien plus en illimité.</h1>
 	</header>
 </template>

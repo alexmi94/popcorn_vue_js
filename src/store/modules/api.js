@@ -2,17 +2,20 @@ export default {
     state: {
         // Define states: each state is a subjet to subscribe
         moviepopular: undefined,
+        session: undefined
     },
     
     getters: {
         // Define getters: each states must have getters
         moviepopular: (state) => state.moviepopular,
+        session: (state) => state.session
         //token: (state) => state.token
     },
 
     mutations: {
         // Define mutations: each states must have mutation
         MOVIEPOPULAR( state, payload ){ state.moviepopular = payload.data },
+        SESSION( state, payload ){ state.session = payload.data }
         //TOKEN( state, payload ){ state.token = payload.data }
     },
 
